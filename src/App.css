@@ -1,0 +1,109 @@
+/* Global Styles & Theme Variables */
+:root {
+  --primary-color: #4CAF50; /* Green */
+  --secondary-color: #FFC107; /* Amber */
+  --background-color: #fdf8e1; /* Light Yellow/Cream */
+  --text-color: #333;
+  --card-background: #fff;
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color-scheme: light;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* App Container */
+.App {
+  text-align: center;
+}
+
+/* Header Styling */
+.App h1 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-size: 2.5em;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px var(--shadow-color);
+}
+
+/* Product List Grid */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Slightly smaller min size */
+  gap: 1.5rem; /* Slightly reduced gap */
+  margin-top: 2rem;
+}
+
+/* Product Item Card Styling */
+.product-item {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px; /* Slightly more rounded corners */
+  padding: 1.5rem; /* More padding */
+  box-shadow: 0 4px 8px var(--shadow-color); /* Enhanced shadow */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left; /* Align text left within cards */
+}
+
+.product-item:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Product Image Styling */
+.product-image {
+  width: 100%; /* Make image fill card width */
+  height: 180px; /* Fixed height */
+  object-fit: cover; /* Cover the area, cropping if needed */
+  border-radius: 6px 6px 0 0; /* Round top corners */
+  margin-bottom: 1rem; /* Space below image */
+}
+
+/* Product Item Content */
+.product-item h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.4em;
+}
+
+/* Alternating Item Styles for Visual Distinction */
+.product-item:nth-child(odd) {
+  border-color: var(--primary-color); /* Green border for odd items */
+}
+
+.product-item:nth-child(even) {
+  border-color: var(--secondary-color); /* Amber border for even items */
+}
+
+.product-item p {
+  margin-bottom: 0.5rem;
+  color: #555; /* Slightly lighter text for description/price */
+  font-size: 0.95em;
+}
+
+.product-item p:last-child {
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #E65100; /* Orange/Brown for price */
+  font-size: 1.1em;
+  margin-top: 1rem; /* Add space above price */
+  text-align: right; /* Align price to the right */
+}
