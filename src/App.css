@@ -131,11 +131,11 @@
   font-size: 0.95em;
 }
 
-/* .product-item p:last-child {
+.product-item p:last-child {
   margin-bottom: 0;
   font-weight: bold;
   color: #E65100; 
   font-size: 1.1em;
   margin-top: 1rem; 
   text-align: right;
-} */
+} 
