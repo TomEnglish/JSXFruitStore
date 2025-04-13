@@ -4,38 +4,50 @@ import './App.css'
 // ## App Component (Parent)
 // - [x ] Initialize state using useState to store product list
 // - [x ] Create products with id, name, price, and description attributes
-// - [ ] Pass product list as props to ProductList component
-// - [ ] Apply custom CSS styling for main app layout
+// - [x ] Pass product list as props to ProductList component
+// - [x ] Apply custom CSS styling for main app layout
 
 function App() {
   // Sample product data object
   const sampleProducts = [
-    { id: 1, name: 'Dragon Fruit', price: 5.99, description: 'Vibrant pink skin...', imageUrl: 'https://placehold.co/300x200/FF1493/FFF?text=Dragon+Fruit' },
-    { id: 2, name: 'Rambutan', price: 4.50, description: 'Red, hairy exterior...', imageUrl: 'https://placehold.co/300x200/DC143C/FFF?text=Rambutan' },
-    { id: 3, name: 'Mangosteen', price: 7.25, description: 'Purple rind, sweet segments...', imageUrl: 'https://placehold.co/300x200/8A2BE2/FFF?text=Mangosteen' },
-    { id: 4, name: 'Durian', price: 12.00, description: 'Strong aroma, creamy flesh...', imageUrl: 'https://placehold.co/300x200/BDB76B/FFF?text=Durian' },
-    { id: 5, name: 'Lychee', price: 3.99, description: 'Rough reddish skin, white pulp...', imageUrl: 'https://placehold.co/300x200/FF6347/FFF?text=Lychee' },
-    { id: 6, name: 'Jackfruit', price: 9.50, description: 'Largest tree fruit, sweet pods...', imageUrl: 'https://placehold.co/300x200/9ACD32/FFF?text=Jackfruit' },
-    { id: 7, name: 'Passion Fruit', price: 2.75, description: 'Tough rind, juicy center...', imageUrl: 'https://placehold.co/300x200/FF8C00/FFF?text=Passion+Fruit' },
-    { id: 8, name: 'Star Fruit (Carambola)', price: 3.15, description: 'Waxy, forms star shapes...', imageUrl: 'https://placehold.co/300x200/FFD700/333?text=Star+Fruit' },
-    { id: 9, name: 'Cherimoya', price: 6.80, description: 'Green, heart-shaped, creamy...', imageUrl: 'https://placehold.co/300x200/90EE90/333?text=Cherimoya' },
-    { id: 10, name: 'Soursop (Guanabana)', price: 8.00, description: 'Prickly green, creamy pulp...', imageUrl: 'https://placehold.co/300x200/3CB371/FFF?text=Soursop' }
+    { id: 1, name: 'Dragon Fruit', price: 5.99, description: 'Stunningly vibrant pink skin with green scales, revealing white or red flesh speckled with tiny black seeds. Mildly sweet taste.', imageUrl: 'https://placehold.co/300x200/FF1493/FFF?text=Dragon+Fruit', category: 'Tried Before' },
+    { id: 2, name: 'Rambutan', price: 4.50, description: 'Exotic fruit covered in soft, hair-like red spines. Inside, a translucent white flesh surrounds a single seed, offering a sweet, slightly tart flavor.', imageUrl: 'https://placehold.co/300x200/DC143C/FFF?text=Rambutan', category: 'New' },
+    { id: 3, name: 'Mangosteen', price: 7.25, description: 'Known as the "Queen of Fruits," features a thick purple rind protecting fragrant, juicy white segments with a sweet-tart, complex flavor.', imageUrl: 'https://placehold.co/300x200/8A2BE2/FFF?text=Mangosteen', category: 'Tried Before' },
+    { id: 4, name: 'Durian', price: 12.00, description: 'Infamous for its pungent aroma, this large, spiky fruit holds rich, custardy yellow flesh with a unique sweet, savory, and slightly bitter taste.', imageUrl: 'https://placehold.co/300x200/BDB76B/FFF?text=Durian', category: 'Tried Before' },
+    { id: 5, name: 'Lychee', price: 3.99, description: 'Small, round fruit with rough, reddish-brown skin. Peels easily to reveal fragrant, sweet, translucent white pulp with a floral note.', imageUrl: 'https://placehold.co/300x200/FF6347/FFF?text=Lychee', category: 'Tried Before' },
+    { id: 6, name: 'Jackfruit', price: 9.50, description: 'The world\'s largest tree fruit, its bumpy green exterior hides fibrous yellow pods with a sweet taste reminiscent of mango and pineapple.', imageUrl: 'https://placehold.co/300x200/9ACD32/FFF?text=Jackfruit', category: 'Favorite' },
+    { id: 7, name: 'Passion Fruit', price: 2.75, description: 'Round or oval fruit with a tough outer rind, typically purple or yellow. Contains aromatic, jelly-like pulp filled with edible seeds. Tart and sweet.', imageUrl: 'https://placehold.co/300x200/FF8C00/FFF?text=Passion+Fruit', category: 'Tried Before' },
+    { id: 8, name: 'Star Fruit (Carambola)', price: 3.15, description: 'Distinctive five-pointed star shape when sliced. Waxy yellow-green skin, crisp texture, and a sweet-tart taste similar to citrus and apple.', imageUrl: 'https://placehold.co/300x200/FFD700/333?text=Star+Fruit', category: 'New' },
+    { id: 9, name: 'Cherimoya', price: 6.80, description: 'Heart-shaped green fruit with scale-like skin. Creamy white flesh has a tropical flavor blend of pineapple, banana, and strawberry. Often called "custard apple."', imageUrl: 'https://placehold.co/300x200/90EE90/333?text=Cherimoya', category: 'New' },
+    { id: 10, name: 'Soursop (Guanabana)', price: 8.00, description: 'Large, prickly green fruit with soft spines. Creamy, fibrous white pulp offers a unique sweet and tangy flavor, combining citrus and strawberry notes.', imageUrl: 'https://placehold.co/300x200/3CB371/FFF?text=Soursop', category: 'New' }
   ];
 
-  // === State Management ===
-  // 'products' state variable holds the array of fruit objects to be displayed.
-  // 'setProducts' is the function to update this state (not used currently, but available).
-  // useState(sampleProducts) initializes the state with our predefined fruit data.
-  // This state is managed by the App component, making it the "source of truth".
-  const [products, setProducts] = useState(sampleProducts);
+
+  const [products, setProducts] = useState(sampleProducts); //Do we do anything with useState/setProducts here?
+  // adding a new state variable to track the selected category
+  const [selectedCategory, selectedSetCategory] = useState('All');
+
+  const filteredProducts = selectedCategory === 'All' ? products : products.filter(
+   v => v.category === selectedCategory);
+
   return (
+    
     <div className="App">
       <h1>Exotic Fruit Market</h1>
-      {/* === Prop Drilling === */}
-      {/* The 'products' state array is passed down as a prop */}
-      {/* to the ProductList component. This is how child components */}
-      {/* receive data from their parent. */}
-      <ProductList products={products} />
+      <div>
+      <h2 classname="filter-header">Filter Fruit By Category:</h2>
+     </div>
+      <div className="filter-buttons">
+        <button className="filter-button" onClick={() => selectedSetCategory('All')}>All</button>
+        <button className="filter-button" onClick={() => selectedSetCategory('Tried Before')}>Tried Before</button>
+        <button className="filter-button" onClick={() => selectedSetCategory('New')}>New</button>
+        <button className="filter-button" onClick={() => selectedSetCategory('Favorite')}>Favorite</button>
+      </div>
+      
+      
+      <ProductList x={filteredProducts} />
+  
+      
     </div>
   );
 }
@@ -46,21 +58,12 @@ function App() {
 // - [ x] Render a ProductItem component for each product
 // - [ x] Apply custom CSS styling for product list layout
 
-// === ProductList Component ===
-// This component receives the list of products via props.
-// It's a "presentational" component focused on displaying the list.
-// It destructures 'products' directly from the props object ({ products }).
-function ProductList({ products }) {
+function ProductList({ x:fruitList }) {
   return (
     <div className="product-list">
-      {products.map((product) => {
-        // For each 'product' in the 'products' array (received via props),
-        // render a ProductItem component.
-        // - 'key={product.id}': Essential for React lists. Helps React efficiently
-        //   update the list when items change. Must be unique among siblings.
-        // - 'product={product}': Pass the individual product object down
-        //   as a prop to the ProductItem component.
-        return <ProductItem key={product.id} product={product} />;
+      {fruitList.map((fruit) => {
+
+        return <ProductItem key={fruit.id} fruitProduct={fruit} />;
       })}
     </div>
   )
@@ -71,21 +74,19 @@ function ProductList({ products }) {
 // - [ x] Display product name
 // - [ x] Display product price
 // - [ x] Display product description
-// - [ ] Style each product with visually distinct CSS
+// - [ ] Style each product with visually distinct CSS  ???
 
-// === ProductItem Component ===
-// This component receives an individual 'product' object via props.
-// It's responsible for displaying the details of a single product.
-// It destructures 'product' directly from the props object ({ product }).
-function ProductItem({ product }) {
+
+function ProductItem({ fruitProduct }) {
   return (
     <div className="product-item">
       {/* Display the image using the imageUrl from props */}
-      <img src={product.imageUrl} alt={product.name} className="product-image" />
-      {/* Access properties from the 'product' prop to display the data */}
-      <h2>{product.name}</h2>
-      <p>{product.description}</p>
-      <p>${product.price.toFixed(2)}</p> {/* Format price to 2 decimal places */}
+      <img src={fruitProduct.imageUrl} alt={fruitProduct.name} className="product-image" />
+      {/* Access properties from the 'fruitProduct' prop to display the data */}
+      <h2>{fruitProduct.name}</h2>
+      <p>{fruitProduct.description}</p>
+      <p>${fruitProduct.price.toFixed(2)}</p>
+      <p>Category: {fruitProduct.category}</p>
     </div>
   )
 }
