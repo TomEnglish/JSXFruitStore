@@ -63,7 +63,9 @@ function ProductList({ x:fruitList }) {
     <div className="product-list">
       {fruitList.map((fruit) => {
 
-        return <ProductItem key={fruit.id} fruitProduct={fruit} />;
+        return <ProductItem fruitProduct={fruit} />;
+      // Copilot keeps suggesting I use key={fruit.id} in the retunr for the benefit of React.  
+      // Its not something we've gone through and my site seems to work the same without.
       })}
     </div>
   )
