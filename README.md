@@ -1,12 +1,50 @@
-# React + Vite
+# Exotic Fruit Market - React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React application built with Vite that displays a list of exotic fruits.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*   Displays a grid of exotic fruits with names, descriptions, prices, and images.
+*   Styled with a fruit vendor theme.
+*   Uses React functional components and hooks (`useState`).
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+*   Node.js (v18 or later recommended)
+*   npm (usually comes with Node.js)
+
+### Installation & Running
+
+1.  **Clone the repository (if applicable):**
+    ```bash
+    git clone <repository-url>
+    cd ecom-product-app
+    ```
+
+2.  **Install dependencies:**
+    Navigate to the `ecom-product-app` directory in your terminal and run:
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    This will start the Vite development server, typically at `http://localhost:5173`. Open this URL in your web browser to view the application.
+
+## Project Structure
+
+*   `public/`: Static assets.
+*   `src/`: Source code for the React application.
+    *   `assets/`: Image assets (if any).
+    *   `App.css`: Main application styles.
+    *   `App.jsx`: Main application component (contains state and component structure).
+    *   `index.css`: Global CSS styles.
+    *   `main.jsx`: Entry point for the React application.
+*   `index.html`: Main HTML file.
+*   `package.json`: Project metadata and dependencies.
+*   `vite.config.js`: Vite configuration file.
+*   `README.md`: This file.
